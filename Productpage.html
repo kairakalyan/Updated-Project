@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-commerce Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+    <a class="navbar-brand text-success" href="#">ECOMMERCE</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Product Image -->
+      <div class="col-md-6">
+        <div class="border rounded p-3">
+          <img id="mainImage" src="watch.jpg" class="img-fluid rounded">
+          <div class="d-flex justify-content-between mt-3">
+            <div class="image-box border rounded p-1" style="width: 90px; height: 90px; cursor: pointer;" onclick="changeImage('watch.jpg')">
+              <img src="watch.jpg">
+            </div>
+            <div class="image-box border rounded p-1" style="width: 90px; height: 90px; cursor: pointer;" onclick="changeImage('watch2.jpg')">
+              <img src="watch2.jpg">
+            </div>
+            <div class="image-box border rounded p-1" style="width: 90px; height: 90px; cursor: pointer;" onclick="changeImage('watch3.jpg')">
+              <img src="watch3.jpg">
+            </div>
+            <div class="image-box border rounded p-1" style="width: 90px; height: 90px; cursor: pointer;" onclick="changeImage('watch4.jpg')">
+              <img src="watch4.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="col-md-6">
+        <h1>Fire-Boltt Smartwatch Talk 2</h1>
+        <p class="text-success">Availability: In Stock</p>
+        <h2 class="text-success">₹344.9</h2>
+
+        <table class="table">
+          <tr><td>Quantity</td><td><input type="number" id="first" class="form-control" min="1" value="1"></td></tr>
+          <tr><td>Sub Total</td><td><input type="number" id="second" class="form-control" readonly></td></tr>
+          <tr><td>Sales Tax 5.7%</td><td><input type="number" id="third" class="form-control" readonly></td></tr>
+          <tr><td>Total</td><td><input type="number" id="fourth" class="form-control" readonly></td></tr>
+        </table>
+
+        <h4>Specifications</h4>
+        <p>India's No. 1 Smartwatch Brand – Bluetooth Calling, Dual Button, Health Monitoring and Long Battery Life.</p>
+
+        <button class="btn btn-success" onclick="checkout()">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function changeImage(src) {
+      document.getElementById("mainImage").src = src;
+    }
+
+    function cart() {
+      const qty = parseInt(document.getElementById("first").value);
+      const price = 344.9;
+      if (!isNaN(qty) && qty > 0) {
+        const subTotal = qty * price;
+        const tax = (subTotal * 5.7) / 100;
+        const total = subTotal + tax;
+        document.getElementById("second").value = subTotal.toFixed(2);
+        document.getElementById("third").value = tax.toFixed(2);
+        document.getElementById("fourth").value = total.toFixed(2);
+      } else {
+        document.getElementById("second").value = '';
+        document.getElementById("third").value = '';
+        document.getElementById("fourth").value = '';
+      }
+    }
+
+    document.getElementById("first").addEventListener("input", cart);
+    window.onload = cart;
+
+    function checkout() {
+      const qty = parseInt(document.getElementById("first").value);
+      const subTotal = parseFloat(document.getElementById("second").value);
+      const tax = parseFloat(document.getElementById("third").value);
+      const total = parseFloat(document.getElementById("fourth").value);
+      const title = "Fire-Boltt Smartwatch Talk 2";
+      const price = 344.9;
+
+      const item = {
+        title: title,
+        price: price,
+        quantity: qty,
+        total: total
+      };
+
+      let cartItems = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+      cartItems.push(item);
+      localStorage.setItem("shoppingCart", JSON.stringify(cartItems));
+      window.location.href = "addresspage.html";
+    }
+  </script>
+</body>
+</html>
