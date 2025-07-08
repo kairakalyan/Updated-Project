@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1683141052679-942eb9e77760?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2hvcHBpbmd8ZW58MHx8MHx8fDA%3D'); /* Vibrant shopping background */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 350px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #FF6F61; /* Main color */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icons .icon {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #888;
+        }
+
+        .social-icons .icon:hover {
+            color: #FF6F61;
+        }
+
+        input {
+            margin-top: 15px;
+            border-radius: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            width: 100%;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 25px;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            background-color: #28a745; /* Green button */
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #FF6F61;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .shopping-image {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Create Account</h1>
+           <!-- <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>    -->
+
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+            <p>Already have an account? <a href="signin.html">Sign In</a></p>
+            <img src="https://images.unsplash.com/photo-1604911800071-1f8e1f0c6b3f" alt="Shopping Clothes" class="shopping-image">
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1615575041661-204b394ff6f7'); /* Shopping background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 40px;
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2980b9; /* New header color */
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icons .icon {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #7f8c8d;
+        }
+
+        .social-icons .icon:hover {
+            color: #3498db; /* New hover color */
+        }
+
+        span {
+            font-size: 1rem;
+            color: #7f8c8d;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 25px;
+            border: 1px solid #bdc3c7;
+            font-size: 1rem;
+            background-color: #ecf0f1;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 25px;
+            background-color: #27ae60; /* Green button color */
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #219653; /* Darker green on hover */
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .sign-up-link {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .sign-up-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .sign-up-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+       <!-- <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div> -->
+        <span>or use your email and password</span>
+        <input type="email" placeholder="Email ID / Mobile Number" required>
+        <input type="password" placeholder="Password" required>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <button onclick="home()">Sign In</button>
+        <div class="sign-up-link">
+            Don't have an account? <a href="signup1.html">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function home(){
+            window.open("index.html");
+        }
+    </script>
+</body>
+</html>
